@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="850.0" prefWidth="1080.0" stylesheets="@PropertyFinder.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="PropertyFinder.PropertyFinderController">
+   <children>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="850.0" prefWidth="1080.0" styleClass="page-scroll" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <VBox prefWidth="1080.0" spacing="18.0">
+               <padding>
+                  <Insets bottom="28.0" left="24.0" right="24.0" top="24.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER" spacing="4.0" styleClass="hero-banner">
+                     <padding>
+                        <Insets bottom="24.0" left="48.0" right="48.0" top="24.0" />
+                     </padding>
+                     <children>
+                        <Label text="Property Finder" styleClass="page-title">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <Label text="Filter properties by location, type, price, and structure" styleClass="page-subtitle" />
+                     </children>
+                  </VBox>
+
+                  <VBox spacing="14.0" styleClass="filter-card">
+                     <padding>
+                        <Insets bottom="22.0" left="26.0" right="26.0" top="22.0" />
+                     </padding>
+                     <children>
+                        <Label text="Search Criteria" styleClass="section-label">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+
+                        <GridPane hgap="20.0" vgap="14.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="25.0" />
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="25.0" />
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="25.0" />
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="25.0" />
+                           </columnConstraints>
+                           <children>
+                              <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="City" styleClass="field-label" />
+                                    <ComboBox fx:id="comboCity" onAction="#doFetchArea" prefHeight="36.0" prefWidth="220.0" styleClass="modern-combo" />
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="Area" styleClass="field-label" />
+                                    <ComboBox fx:id="comboArea" prefHeight="36.0" prefWidth="220.0" styleClass="modern-combo" />
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="6.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="Property Type" styleClass="field-label" />
+                                    <ComboBox fx:id="comboPropType" prefHeight="36.0" prefWidth="220.0" styleClass="modern-combo" />
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="6.0" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="Structure" styleClass="field-label" />
+                                    <ComboBox fx:id="comboStructure" prefHeight="36.0" prefWidth="220.0" styleClass="modern-combo" />
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Min Price" styleClass="field-label" />
+                                    <TextField fx:id="txtMinPrice" prefHeight="36.0" prefWidth="220.0" promptText="Minimum price" />
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Max Price" styleClass="field-label" />
+                                    <TextField fx:id="txtMaxPrice" prefHeight="36.0" prefWidth="220.0" promptText="Maximum price" />
+                                 </children>
+                              </VBox>
+
+                              <VBox alignment="BOTTOM_CENTER" spacing="6.0" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text=" " styleClass="field-label" />
+                                    <Button mnemonicParsing="false" onAction="#doSearchProperties" prefHeight="40.0" prefWidth="200.0" text="Search Properties" styleClass="primary-button">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </VBox>
+
+                  <VBox spacing="12.0" styleClass="table-card">
+                     <padding>
+                        <Insets bottom="18.0" left="18.0" right="18.0" top="18.0" />
+                     </padding>
+                     <children>
+                        <Label text="Matching Properties" styleClass="section-label">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="TableProperties" prefHeight="470.0" prefWidth="1030.0" styleClass="modern-table" />
+                     </children>
+                  </VBox>
+
+                  <HBox alignment="CENTER" spacing="20.0" styleClass="action-bar">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#doExportToExcel" prefHeight="40.0" prefWidth="200.0" text="Export To Excel" styleClass="success-button">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#doGeneratePDF" prefHeight="40.0" prefWidth="200.0" text="Generate PDF" styleClass="danger-button">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

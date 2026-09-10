@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="860.0" prefWidth="1080.0" stylesheets="@Propertyv.css" styleClass="root" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Property.PropertyController">
+   <children>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="860.0" prefWidth="1080.0" styleClass="page-scroll" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <VBox prefWidth="1080.0" spacing="18.0">
+               <padding>
+                  <Insets bottom="28.0" left="24.0" right="24.0" top="24.0" />
+               </padding>
+               <children>
+                  <VBox alignment="CENTER" spacing="4.0" styleClass="hero-banner">
+                     <padding>
+                        <Insets bottom="22.0" left="48.0" right="48.0" top="22.0" />
+                     </padding>
+                     <children>
+                        <Label fx:id="lblTitle" text="🏡 Property Listing" styleClass="page-title">
+                           <font>
+                              <Font name="Segoe UI Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <Label text="List, update, and manage property details with a cleaner workflow" styleClass="page-subtitle" />
+                     </children>
+                  </VBox>
+
+                  <VBox spacing="14.0" styleClass="form-card">
+                     <padding>
+                        <Insets bottom="24.0" left="26.0" right="26.0" top="24.0" />
+                     </padding>
+                     <children>
+                        <VBox spacing="10.0" styleClass="section-card">
+                           <children>
+                              <Label text="Property Selection" styleClass="section-label">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <GridPane hgap="20.0" vgap="12.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="26.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="56.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="18.0" />
+                                 </columnConstraints>
+                                 <children>
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                       <children>
+                                          <Label text="Mobile Number" styleClass="field-label" />
+                                          <TextField fx:id="txtMobile" prefHeight="34.0" prefWidth="220.0" promptText="10-digit mobile number" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                       <children>
+                                          <Label text="Listed Property" styleClass="field-label" />
+                                          <ComboBox fx:id="comboListProperty" onAction="#doListDetails" prefHeight="34.0" prefWidth="250.0" styleClass="modern-combo" />
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="btnFetch" mnemonicParsing="false" onAction="#doFetch" prefHeight="36.0" prefWidth="120.0" text="Fetch" styleClass="accent-button" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+
+                        <GridPane hgap="18.0" vgap="18.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="34.0" />
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="66.0" />
+                           </columnConstraints>
+                           <children>
+                              <VBox spacing="10.0" styleClass="section-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="Property Photos" styleClass="section-label">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+
+                                    <VBox spacing="16.0">
+                                       <children>
+                                          <VBox spacing="8.0">
+                                             <children>
+                                                <Label text="Front View" styleClass="field-label" />
+                                                <StackPane styleClass="photo-frame">
+                                                   <children>
+                                                      <ImageView fx:id="Prev1" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </StackPane>
+                                                <Button fx:id="btnBrowse1" mnemonicParsing="false" onAction="#doBrowse1" prefHeight="36.0" prefWidth="120.0" text="Browse" styleClass="secondary-button" />
+                                             </children>
+                                          </VBox>
+
+                                          <VBox spacing="8.0">
+                                             <children>
+                                                <Label text="Additional View" styleClass="field-label" />
+                                                <StackPane styleClass="photo-frame">
+                                                   <children>
+                                                      <ImageView fx:id="Prev2" fitHeight="140.0" fitWidth="190.0" pickOnBounds="true" preserveRatio="true" />
+                                                   </children>
+                                                </StackPane>
+                                                <Button fx:id="btnBrowse2" mnemonicParsing="false" onAction="#doBrowse2" prefHeight="36.0" prefWidth="120.0" text="Browse" styleClass="secondary-button" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="10.0" styleClass="section-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="Property Details" styleClass="section-label">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <GridPane hgap="18.0" vgap="12.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                                          <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                                       </columnConstraints>
+                                       <children>
+                                          <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                             <children>
+                                                <Label text="Location/Address" styleClass="field-label" />
+                                                <TextField fx:id="txtAddr" prefHeight="34.0" prefWidth="290.0" promptText="Property address" />
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                             <children>
+                                                <Label text="Area" styleClass="field-label" />
+                                                <TextField fx:id="txtArea" prefHeight="34.0" prefWidth="290.0" promptText="Area" />
+                                             </children>
+                                          </VBox>
+
+                                          <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label text="City" styleClass="field-label" />
+                                                <TextField fx:id="txtCity" prefHeight="34.0" prefWidth="290.0" promptText="City" />
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                             <children>
+                                                <Label text="Size (Sq.Yd)" styleClass="field-label" />
+                                                <TextField fx:id="txtSize" prefHeight="34.0" prefWidth="290.0" promptText="Size" />
+                                             </children>
+                                          </VBox>
+
+                                          <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label text="Front" styleClass="field-label" />
+                                                <TextField fx:id="txtFront" prefHeight="34.0" prefWidth="140.0" promptText="Front" />
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                             <children>
+                                                <Label text="Rear" styleClass="field-label" />
+                                                <TextField fx:id="txtRear" prefHeight="34.0" prefWidth="140.0" promptText="Rear" />
+                                             </children>
+                                          </VBox>
+
+                                          <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                             <children>
+                                                <Label text="Left" styleClass="field-label" />
+                                                <TextField fx:id="txtLeft" prefHeight="34.0" prefWidth="140.0" promptText="Left" />
+                                             </children>
+                                          </VBox>
+                                          <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                             <children>
+                                                <Label text="Right" styleClass="field-label" />
+                                                <TextField fx:id="txtRight" prefHeight="34.0" prefWidth="140.0" promptText="Right" />
+                                             </children>
+                                          </VBox>
+
+                                          <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="4">
+                                             <children>
+                                                <Label text="Direction" styleClass="field-label" />
+                                                <TextField fx:id="txtDir" prefHeight="34.0" prefWidth="290.0" promptText="Direction" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+
+                        <GridPane hgap="18.0" vgap="18.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                           </columnConstraints>
+                           <children>
+                              <VBox spacing="10.0" styleClass="section-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="Property Type" styleClass="section-label">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox spacing="8.0">
+                                       <children>
+                                          <RadioButton fx:id="radCommercial" mnemonicParsing="false" text="Commercial" styleClass="modern-radio">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="grpType" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="radResidential" mnemonicParsing="false" text="Residential" toggleGroup="$grpType" styleClass="modern-radio" />
+                                          <RadioButton fx:id="radAgriculture" mnemonicParsing="false" text="Agricultural" toggleGroup="$grpType" styleClass="modern-radio" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+
+                              <VBox spacing="10.0" styleClass="section-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="Property Structure" styleClass="section-label">
+                                       <font>
+                                          <Font name="System Bold" size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <VBox spacing="8.0">
+                                       <children>
+                                          <RadioButton fx:id="radPlot" mnemonicParsing="false" text="Plot" styleClass="modern-radio">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="grpProperty" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton fx:id="radConstructed" mnemonicParsing="false" text="Constructed" toggleGroup="$grpProperty" styleClass="modern-radio" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+
+                        <GridPane hgap="18.0" vgap="18.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="34.0" />
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="33.0" />
+                              <ColumnConstraints hgrow="ALWAYS" percentWidth="33.0" />
+                           </columnConstraints>
+                           <children>
+                              <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="Approved By" styleClass="field-label" />
+                                    <ComboBox fx:id="comboApprovedBy" prefHeight="34.0" prefWidth="260.0" styleClass="modern-combo" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="Total Price Demanded" styleClass="field-label" />
+                                    <TextField fx:id="txtTotalPrice" prefHeight="34.0" prefWidth="260.0" promptText="Total price" />
+                                 </children>
+                              </VBox>
+                              <VBox spacing="6.0" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                                 <children>
+                                    <Label text="Other Info" styleClass="field-label" />
+                                    <TextField fx:id="txtOtherInfo" prefHeight="34.0" prefWidth="260.0" promptText="Other info" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+
+                        <HBox alignment="CENTER" spacing="18.0" styleClass="action-bar">
+                           <children>
+                              <Button fx:id="btnListNow" mnemonicParsing="false" onAction="#doListNow" prefHeight="40.0" prefWidth="220.0" text="List Now" styleClass="primary-button">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnUpdateDetails" mnemonicParsing="false" onAction="#doUpdate" prefHeight="40.0" prefWidth="220.0" text="Update Details" styleClass="success-button">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnRemove" mnemonicParsing="false" onAction="#doRemove" prefHeight="40.0" prefWidth="220.0" text="Remove Listing" styleClass="danger-button">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

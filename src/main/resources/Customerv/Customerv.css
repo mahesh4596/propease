@@ -1,0 +1,211 @@
+.root{
+    -fx-background-color: #eef1f6;
+    -fx-font-family: "Segoe UI";
+}
+
+.page-scroll,
+.page-scroll .viewport{
+    -fx-background-color: transparent;
+}
+/* ===========================
+        TITLE
+=========================== */
+.label{
+    -fx-font-family: "Segoe UI", "Noto Color Emoji", "DejaVu Sans";
+    -fx-text-fill:#215cb4;
+    -fx-font-size:18px;
+    -fx-font-weight:bold;
+}
+#title{
+    -fx-font-family: "Segoe UI", "Noto Color Emoji", "DejaVu Sans";
+    -fx-font-size:38px;
+    -fx-text-fill:#215cb4;
+    -fx-font-weight:bold;
+}
+.subtitle-label{
+    -fx-font-family: "Segoe UI", "Noto Color Emoji", "DejaVu Sans";
+    -fx-text-fill:#546E7A;
+    -fx-font-size:15px;
+    -fx-font-weight:normal;
+}
+/* ===========================
+        FORM CARD
+=========================== */
+.form-card{
+    -fx-background-color:rgba(255,255,255,0.72);
+    -fx-background-radius:24;
+    -fx-border-radius:24;
+    -fx-border-color:rgba(255,255,255,0.9);
+    -fx-border-width:1.5;
+    -fx-effect:dropshadow(gaussian,#0D47A122,22,0.35,0,8);
+}
+.field-label{
+    -fx-text-fill:#37474F;
+    -fx-font-size:14px;
+    -fx-font-weight:bold;
+}
+.section-label{
+    -fx-text-fill:#0D47A1;
+    -fx-font-size:16px;
+    -fx-font-weight:bold;
+    -fx-border-color:#90CAF9 transparent transparent transparent;
+    -fx-border-width:1.5 0 0 0;
+    -fx-padding:12 0 0 0;
+}
+.action-bar{
+    -fx-padding:10 0 0 0;
+}
+/* ===========================
+        TEXTFIELDS
+=========================== */
+.text-field{
+    -fx-background-color:white;
+    -fx-background-radius:12;
+    -fx-border-radius:12;
+    -fx-border-color:#64B5F6;
+    -fx-border-width:2;
+    -fx-font-size:15px;
+    -fx-padding:8;
+}
+.text-field:focused{
+    -fx-border-color:#1565C0;
+    -fx-border-width:2.5;
+    -fx-effect:dropshadow(gaussian,#64B5F655,10,0.3,0,0);
+}
+/* ===========================
+        COMBOBOX
+=========================== */
+.combo-box{
+    -fx-background-color:white;
+    -fx-background-radius:12;
+    -fx-border-radius:12;
+    -fx-border-color:#64B5F6;
+    -fx-border-width:2;
+    -fx-font-size:15px;
+}
+.combo-box:focused{
+    -fx-border-color:#1565C0;
+}
+/* ===========================
+        BUTTONS
+=========================== */
+.button{
+    -fx-font-family: "Segoe UI", "Noto Color Emoji", "DejaVu Sans";
+    -fx-background-color:linear-gradient(#42A5F5,#1E88E5);
+    -fx-text-fill:white;
+    -fx-font-size:16px;
+    -fx-font-weight:bold;
+    -fx-background-radius:18;
+    -fx-cursor:hand;
+    -fx-effect:dropshadow(gaussian,#90CAF9AA,8,0.3,0,2);
+}
+.button:hover{
+    -fx-background-color:linear-gradient(#64B5F6,#1976D2);
+    -fx-scale-x:1.05;
+    -fx-scale-y:1.05;
+}
+.button:pressed{
+    -fx-scale-x:0.98;
+    -fx-scale-y:0.98;
+}
+/* ===========================
+      SAVE BUTTON
+=========================== */
+#btnSave{
+    -fx-background-color:linear-gradient(#43A047,#2E7D32);
+}
+#btnSave:hover{
+    -fx-background-color:linear-gradient(#66BB6A,#388E3C);
+}
+/* ===========================
+      UPDATE BUTTON
+=========================== */
+#btnUpdate{
+    -fx-background-color:linear-gradient(#FB8C00,#EF6C00);
+}
+#btnUpdate:hover{
+    -fx-background-color:linear-gradient(#FFA726,#F57C00);
+}
+/* ===========================
+      DELETE BUTTON
+=========================== */
+#btnDelete{
+    -fx-background-color:linear-gradient(#EF5350,#C62828);
+}
+#btnDelete:hover{
+    -fx-background-color:linear-gradient(#E57373,#D32F2F);
+}
+/* ===========================
+      CLEAR BUTTON
+=========================== */
+#btnClear{
+    -fx-background-color:linear-gradient(#8E24AA,#6A1B9A);
+}
+#btnClear:hover{
+    -fx-background-color:linear-gradient(#AB47BC,#8E24AA);
+}
+/* ===========================
+      SEARCH BUTTON
+=========================== */
+#btnSearch{
+    -fx-background-color:linear-gradient(#0288D1,#01579B);
+}
+#btnSearch:hover{
+    -fx-background-color:linear-gradient(#03A9F4,#0277BD);
+}
+/* ===========================
+     BROWSE BUTTONS
+=========================== */
+#btnBrowsePic,
+#btnBrowseAdhaar{
+    -fx-background-color:linear-gradient(#26A69A,#00897B);
+}
+#btnBrowsePic:hover,
+#btnBrowseAdhaar:hover{
+    -fx-background-color:linear-gradient(#4DB6AC,#009688);
+}
+/* ===========================
+      IMAGE PREVIEW FRAME
+=========================== */
+.photo-frame{
+    -fx-background-color:white;
+    -fx-background-radius:15;
+    -fx-border-color:#42A5F5;
+    -fx-border-width:2.5;
+    -fx-border-radius:15;
+    -fx-min-width:190;
+    -fx-min-height:140;
+    -fx-max-width:190;
+    -fx-max-height:140;
+    -fx-effect:dropshadow(gaussian,#90CAF9AA,10,0.3,0,3);
+}
+#Prev1,
+#Prev2{
+    -fx-background-radius:12;
+}
+/* ===========================
+      RECTANGLES
+=========================== */
+.rectangle{
+    -fx-fill:white;
+    -fx-stroke:#42A5F5;
+    -fx-stroke-width:2;
+    -fx-arc-width:20;
+    -fx-arc-height:20;
+}
+/* ===========================
+      TOOLTIP
+=========================== */
+.tooltip{
+    -fx-font-size:14px;
+}
+/* ===========================
+      SCROLL BAR
+=========================== */
+.scroll-bar{
+    -fx-background-color:transparent;
+}
+.scroll-bar .thumb{
+    -fx-background-color:#64B5F6;
+    -fx-background-radius:10;
+}

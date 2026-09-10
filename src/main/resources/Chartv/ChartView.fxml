@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="846.0" prefWidth="1254.0" stylesheets="@Chartv.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Chart.ChartConroller">
+    <children>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="846.0" prefWidth="1254.0" styleClass="page-scroll" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <content>
+                <VBox prefWidth="1254.0" spacing="18.0">
+                    <padding>
+                        <Insets bottom="28.0" left="24.0" right="24.0" top="24.0" />
+                    </padding>
+                    <children>
+                        <VBox alignment="CENTER" spacing="4.0" styleClass="hero-banner">
+                            <padding>
+                                <Insets bottom="22.0" left="48.0" right="48.0" top="22.0" />
+                            </padding>
+                            <children>
+                                <Label text="Real Estate Dashboard" styleClass="dashboard-title">
+                                    <font>
+                                        <Font name="System Bold" size="34.0" />
+                                    </font>
+                                </Label>
+                                <Label text="At-a-glance insights for properties, deals, customers, and inventory" styleClass="dashboard-subtitle">
+                                    <font>
+                                        <Font size="16.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </VBox>
+
+                        <GridPane hgap="20.0" vgap="20.0">
+                            <columnConstraints>
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                                <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                            </columnConstraints>
+                            <children>
+                                <StackPane styleClass="dashboard-card" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <children>
+                                        <VBox spacing="10.0" styleClass="card-content">
+                                            <children>
+                                                <Label text="Property Types" styleClass="card-title" />
+                                                <PieChart fx:id="propertiesType" labelsVisible="true" legendVisible="true" prefHeight="280.0" prefWidth="520.0" startAngle="90.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+
+                                <StackPane styleClass="dashboard-card" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                    <children>
+                                        <VBox spacing="10.0" styleClass="card-content">
+                                            <children>
+                                                <Label text="Deal Status" styleClass="card-title" />
+                                                <PieChart fx:id="dealStatus" labelsVisible="true" legendVisible="true" prefHeight="280.0" prefWidth="520.0" startAngle="90.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+
+                                <StackPane styleClass="dashboard-card" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <children>
+                                        <VBox spacing="10.0" styleClass="card-content">
+                                            <children>
+                                                <Label text="Customer Types" styleClass="card-title" />
+                                                <PieChart fx:id="customerType" labelsVisible="true" legendVisible="true" prefHeight="280.0" prefWidth="520.0" startAngle="90.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+
+                                <StackPane styleClass="dashboard-card" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                        <VBox spacing="10.0" styleClass="card-content">
+                                            <children>
+                                                <Label text="Property Status" styleClass="card-title" />
+                                                <PieChart fx:id="propertiesStatus" labelsVisible="true" legendVisible="true" prefHeight="280.0" prefWidth="520.0" startAngle="90.0" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </StackPane>
+                            </children>
+                        </GridPane>
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>

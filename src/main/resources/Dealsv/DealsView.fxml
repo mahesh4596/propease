@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="820.0" prefWidth="1080.0" stylesheets="@Dealsv.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Deals.DealsController">
+   <children>
+      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" prefHeight="820.0" prefWidth="1080.0" styleClass="page-scroll" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <VBox prefWidth="1080.0" spacing="14.0">
+               <children>
+                  <VBox prefHeight="108.0" prefWidth="1080.0" styleClass="hero-banner">
+                     <padding>
+                        <Insets bottom="0.0" left="48.0" right="48.0" top="20.0" />
+                     </padding>
+                     <children>
+                        <Label text="Finalized Deals" styleClass="page-title">
+                           <font>
+                              <Font name="System Bold" size="30.0" />
+                           </font>
+                        </Label>
+                        <Label text="Record buyer, seller, and settlement details in a polished workflow" styleClass="page-subtitle" />
+                     </children>
+                  </VBox>
+
+                  <VBox prefWidth="984.0" spacing="14.0" styleClass="form-card">
+                     <padding>
+                        <Insets bottom="22.0" left="28.0" right="28.0" top="22.0" />
+                     </padding>
+                     <children>
+                        <VBox spacing="10.0" styleClass="section-card">
+                           <children>
+                              <Label text="Property Details" styleClass="section-label">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <GridPane hgap="16.0" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="28.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="72.0" />
+                                 </columnConstraints>
+                                 <children>
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                       <children>
+                                          <Label text="Property Id" styleClass="field-label" />
+                                          <ComboBox fx:id="comboP" prefHeight="34.0" prefWidth="220.0" styleClass="modern-combo" />
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="btnFetchP" mnemonicParsing="false" onAction="#doFetctchP" prefHeight="36.0" prefWidth="160.0" text="Fetch Property" styleClass="accent-button" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="Property Address" styleClass="field-label" />
+                                          <TextField fx:id="txtPAddr" editable="false" prefHeight="34.0" prefWidth="850.0" promptText="Property address" />
+                                       </children>
+                                    </VBox>
+
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Property Owner" styleClass="field-label" />
+                                          <TextField fx:id="txtPOwner" editable="false" prefHeight="34.0" prefWidth="250.0" promptText="Owner name" />
+                                       </children>
+                                    </VBox>
+
+                                    <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Property Status" styleClass="field-label" />
+                                          <TextField fx:id="txtPStatus" editable="false" prefHeight="34.0" prefWidth="250.0" promptText="Property status" />
+                                       </children>
+                                    </VBox>
+
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                       <children>
+                                          <Label text="Mobile" styleClass="field-label" />
+                                          <TextField fx:id="txtPMobile" editable="false" prefHeight="34.0" prefWidth="250.0" promptText="Seller mobile" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+
+                        <VBox spacing="10.0" styleClass="section-card">
+                           <children>
+                              <Label text="Buyer Details" styleClass="section-label">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <GridPane hgap="16.0" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="28.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="72.0" />
+                                 </columnConstraints>
+                                 <children>
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                       <children>
+                                          <Label text="Buyer Mobile" styleClass="field-label" />
+                                          <TextField fx:id="txtBMobile" prefHeight="34.0" prefWidth="220.0" promptText="Enter buyer mobile" />
+                                       </children>
+                                    </VBox>
+                                    <Button fx:id="btnFetchB" mnemonicParsing="false" onAction="#doFetchB" prefHeight="36.0" prefWidth="150.0" text="Fetch Buyer" styleClass="accent-button" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="Buyer Name" styleClass="field-label" />
+                                          <TextField fx:id="txtBName" editable="false" prefHeight="34.0" prefWidth="850.0" promptText="Buyer name" />
+                                       </children>
+                                    </VBox>
+
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Buyer Address" styleClass="field-label" />
+                                          <TextField fx:id="txtBAddr" editable="false" prefHeight="34.0" prefWidth="850.0" promptText="Buyer address" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+
+                        <VBox spacing="10.0" styleClass="section-card">
+                           <children>
+                              <Label text="Deal Summary" styleClass="section-label">
+                                 <font>
+                                    <Font name="System Bold" size="18.0" />
+                                 </font>
+                              </Label>
+                              <GridPane hgap="16.0" vgap="10.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                                    <ColumnConstraints hgrow="ALWAYS" percentWidth="50.0" />
+                                 </columnConstraints>
+                                 <children>
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                       <children>
+                                          <Label text="Final Deal Price" styleClass="field-label" />
+                                          <TextField fx:id="txtFinalDealPrice" prefHeight="34.0" prefWidth="360.0" promptText="Final selling price" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                       <children>
+                                          <Label text="Advanced Paid" styleClass="field-label" />
+                                          <TextField fx:id="txtAdvPaid" prefHeight="34.0" prefWidth="360.0" promptText="Advance paid" />
+                                       </children>
+                                    </VBox>
+
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="Balance Amount" styleClass="field-label" />
+                                          <TextField fx:id="txtBalAmt" prefHeight="34.0" prefWidth="360.0" promptText="Remaining balance" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label text="Commission" styleClass="field-label" />
+                                          <TextField fx:id="txtComm" prefHeight="34.0" prefWidth="360.0" promptText="Commission amount" />
+                                       </children>
+                                    </VBox>
+
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Registry Date" styleClass="field-label" />
+                                          <DatePicker fx:id="regDate" prefHeight="34.0" prefWidth="360.0" styleClass="modern-date" />
+                                       </children>
+                                    </VBox>
+                                    <VBox spacing="6.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                       <children>
+                                          <Label text="Deal Date" styleClass="field-label" />
+                                          <DatePicker fx:id="dealDate" prefHeight="34.0" prefWidth="360.0" styleClass="modern-date" />
+                                       </children>
+                                    </VBox>
+
+                                    <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="3">
+                                       <children>
+                                          <Label text="Deal Status" styleClass="field-label" />
+                                          <ComboBox fx:id="comboStatus" prefHeight="34.0" prefWidth="360.0" styleClass="modern-combo" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </VBox>
+
+                        <HBox alignment="CENTER" spacing="18.0" styleClass="action-bar">
+                           <children>
+                              <Button fx:id="btnFinalizeDeal" mnemonicParsing="false" onAction="#doFinalizeDeal" prefHeight="38.0" prefWidth="190.0" text="Finalize Deal" styleClass="primary-button">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnUpdate" mnemonicParsing="false" onAction="#doUpdate" prefHeight="38.0" prefWidth="190.0" text="Update" styleClass="success-button">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                              <Button fx:id="btnCancelDeal" mnemonicParsing="false" onAction="#doCancelDeal" prefHeight="38.0" prefWidth="190.0" text="Cancel Deal" styleClass="danger-button">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,74 @@
+/* ===================== ROOT ===================== */
+.root-pane {
+    -fx-background-color: #eef1f6;
+}
+
+/* ===================== HEADER ===================== */
+.header-bar {
+    -fx-background-color: linear-gradient(to right, #1f2b52, #2f4380);
+}
+
+.title-label {
+    -fx-text-fill: #ffffff;
+}
+
+.subtitle-label {
+    -fx-text-fill: #c7d0e8;
+    -fx-font-size: 13px;
+}
+
+/* ===================== CARDS ===================== */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: #e2e6f0;
+    -fx-border-width: 1;
+    -fx-padding: 22 12 22 12;
+    -fx-effect: dropshadow(gaussian, rgba(31,43,82,0.10), 14, 0, 0, 4);
+    -fx-cursor: hand;
+}
+
+.card:hover {
+    -fx-background-color: #f7f9ff;
+    -fx-border-color: #2f4380;
+    -fx-effect: dropshadow(gaussian, rgba(31,43,82,0.22), 18, 0, 0, 6);
+    -fx-translate-y: -3;
+}
+
+.card-accent {
+    -fx-border-color: #f0d3d3;
+}
+
+.card-accent:hover {
+    -fx-border-color: #c0392b;
+}
+
+/* ===================== BUTTONS ===================== */
+.card-button {
+    -fx-background-color: #2f4380;
+    -fx-text-fill: #ffffff;
+    -fx-background-radius: 8;
+    -fx-padding: 8 22 8 22;
+    -fx-cursor: hand;
+}
+
+.card-button:hover {
+    -fx-background-color: #24326b;
+}
+
+.card-button:armed {
+    -fx-background-color: #1c2650;
+}
+
+.card-button-accent {
+    -fx-background-color: #c0392b;
+}
+
+.card-button-accent:hover {
+    -fx-background-color: #a5311f;
+}
+
+.card-button-accent:armed {
+    -fx-background-color: #862719;
+}

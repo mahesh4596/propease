@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="950.0"
+            xmlns="http://javafx.com/javafx/26"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Login.LoginController"
+            style="-fx-background-color: linear-gradient(to bottom right,#0F4C81,#3B82F6,#93C5FD);">
+
+    <children>
+
+        <!-- White Login Card -->
+
+        <AnchorPane layoutX="175" layoutY="70"
+                    prefHeight="510"
+                    prefWidth="600"
+                    style="-fx-background-color:white;
+                           -fx-background-radius:25;
+                           -fx-border-radius:25;
+                           -fx-effect:dropshadow(gaussian,rgba(0,0,0,0.25),25,0,0,5);">
+
+            <children>
+
+                <Label layoutX="55" layoutY="25"
+                       text="PropEase">
+
+                    <font>
+                        <Font name="System Bold" size="28"/>
+                    </font>
+
+                </Label>
+
+                <!-- Logo -->
+
+                <ImageView fx:id="profileImg"
+                           fitHeight="170"
+                           fitWidth="170"
+                           layoutX="50"
+                           layoutY="120"
+                           preserveRatio="true">
+
+                    <image>
+                        <Image url="@Login.png"/>
+                    </image>
+
+                </ImageView>
+
+
+                <Label layoutX="285"
+                       layoutY="135"
+                       text="Username"
+                       style="-fx-font-size:18;
+                              -fx-font-weight:bold;"/>
+
+                <TextField fx:id="txtUsername"
+                           layoutX="285"
+                           layoutY="170"
+                           prefHeight="42"
+                           prefWidth="250"
+                           promptText="Enter Username"
+                           style="-fx-background-radius:15;
+                                  -fx-border-radius:15;
+                                  -fx-border-color:#3B82F6;
+                                  -fx-font-size:15;"/>
+
+
+
+                <Label layoutX="285"
+                       layoutY="245"
+                       text="Password"
+                       style="-fx-font-size:18;
+                              -fx-font-weight:bold;"/>
+
+
+
+                <PasswordField fx:id="password"
+                               layoutX="285"
+                               layoutY="280"
+                               prefHeight="42"
+                               prefWidth="250"
+                               promptText="Enter Password"
+                               style="-fx-background-radius:15;
+                                      -fx-border-radius:15;
+                                      -fx-border-color:#3B82F6;
+                                      -fx-font-size:15;"/>
+
+
+
+                <Button fx:id="btnLogin"
+                        layoutX="285"
+                        layoutY="365"
+                        mnemonicParsing="false"
+                        onAction="#doLogin"
+                        prefHeight="45"
+                        prefWidth="250"
+                        text="LOGIN"
+                        style="-fx-background-color:#2563EB;
+                               -fx-text-fill:white;
+                               -fx-font-size:18;
+                               -fx-font-weight:bold;
+                               -fx-background-radius:20;
+                               -fx-cursor:hand;"/>
+
+
+                <Label layoutX="250"
+                       layoutY="450"
+                       text="© 2026 PropEase"
+                       style="-fx-text-fill:gray;
+                              -fx-font-size:12;"/>
+
+            </children>
+
+        </AnchorPane>
+
+    </children>
+
+</AnchorPane>

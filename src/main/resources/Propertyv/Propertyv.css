@@ -1,0 +1,143 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom right, #f7fbff, #e8f3ff, #d7eaff);
+    -fx-font-family: "Segoe UI";
+}
+
+.page-scroll,
+.page-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+.hero-banner {
+    -fx-background-color: linear-gradient(to right, #0d47a1, #1976d2, #42a5f5);
+    -fx-background-radius: 24;
+    -fx-effect: dropshadow(gaussian, rgba(13,71,161,0.35), 24, 0, 0, 6);
+}
+
+#lblTitle,
+.page-title {
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 8, 0, 0, 2);
+}
+
+.page-subtitle {
+    -fx-text-fill: rgba(255,255,255,0.9);
+    -fx-font-size: 14px;
+}
+
+.form-card,
+.section-card {
+    -fx-background-color: rgba(255,255,255,0.92);
+    -fx-background-radius: 24;
+    -fx-border-radius: 24;
+    -fx-border-color: rgba(182,205,232,0.9);
+    -fx-border-width: 1.2;
+    -fx-effect: dropshadow(gaussian, rgba(32,80,140,0.14), 18, 0, 0, 4);
+}
+
+.section-card {
+    -fx-padding: 18 18 18 18;
+}
+
+.section-label {
+    -fx-text-fill: #264a73;
+}
+
+.field-label {
+    -fx-text-fill: #37474f;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.text-field,
+.combo-box {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f8fbff);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: #c8d8ea;
+    -fx-border-width: 1.4;
+    -fx-font-size: 14px;
+    -fx-padding: 9 14;
+    -fx-prompt-text-fill: #90a4b8;
+    -fx-effect: dropshadow(gaussian, rgba(17,44,84,0.08), 10, 0, 0, 2);
+}
+
+.text-field:focused,
+.combo-box:focused {
+    -fx-border-color: #1e88e5;
+    -fx-border-width: 2;
+}
+
+.button {
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.20), 10, 0, 0, 3);
+}
+
+.button:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(to right, #1e88e5, #1565c0);
+}
+
+.success-button {
+    -fx-background-color: linear-gradient(to right, #43a047, #2e7d32);
+}
+
+.danger-button {
+    -fx-background-color: linear-gradient(to right, #ef5350, #c62828);
+}
+
+.accent-button {
+    -fx-background-color: linear-gradient(to right, #ffb74d, #fb8c00);
+}
+
+.secondary-button {
+    -fx-background-color: linear-gradient(to right, #5c6bc0, #3949ab);
+}
+
+.modern-combo {
+    -fx-background-color: linear-gradient(to bottom, #ffffff, #f8fbff);
+}
+
+.modern-radio {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #263238;
+}
+
+.radio-button .radio {
+    -fx-background-color: white;
+    -fx-border-color: #1e88e5;
+    -fx-border-width: 2;
+    -fx-border-radius: 999;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: #1e88e5;
+}
+
+.photo-frame {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-border-color: #64b5f6;
+    -fx-border-width: 2.5;
+    -fx-border-radius: 16;
+    -fx-min-width: 190;
+    -fx-min-height: 140;
+    -fx-max-width: 190;
+    -fx-max-height: 140;
+    -fx-effect: dropshadow(gaussian, rgba(144,202,249,0.65), 10, 0, 0, 3);
+}
+
+.action-bar {
+    -fx-padding: 8 0 0 0;
+}

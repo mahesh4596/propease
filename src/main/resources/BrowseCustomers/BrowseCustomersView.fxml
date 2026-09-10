@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="760.0" prefWidth="1080.0" stylesheets="@BrowseCustomers.css" styleClass="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BrowseCustomers.BrowseCustomersController">
+    <children>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="page-scroll" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <content>
+                <VBox prefWidth="1080.0" spacing="18.0">
+                    <padding>
+                        <Insets bottom="28.0" left="24.0" right="24.0" top="24.0" />
+                    </padding>
+                    <children>
+
+                        <VBox alignment="CENTER" spacing="4.0">
+                            <children>
+                                <Label styleClass="title-label" text="Browse Customers">
+                                    <font>
+                                        <Font name="System Bold" size="34.0" />
+                                    </font>
+                                </Label>
+                                <Label styleClass="subtitle-label" text="Filter customers by category and export the results" />
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="14.0" styleClass="filter-card">
+                            <padding>
+                                <Insets bottom="18.0" left="26.0" right="26.0" top="18.0" />
+                            </padding>
+                            <children>
+                                <Label styleClass="section-label" text="Search Criteria">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <GridPane hgap="20.0" vgap="12.0">
+                                    <columnConstraints>
+                                        <ColumnConstraints hgrow="ALWAYS" percentWidth="75.0" />
+                                        <ColumnConstraints hgrow="ALWAYS" percentWidth="25.0" />
+                                    </columnConstraints>
+                                    <children>
+                                        <VBox spacing="6.0" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                            <children>
+                                                <Label styleClass="field-label" text="Customer Category" />
+                                                <ComboBox fx:id="comboCategory" prefHeight="32.0" prefWidth="260.0" />
+                                            </children>
+                                        </VBox>
+                                        <VBox alignment="BOTTOM_CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                            <children>
+                                                <Button fx:id="btnShowData" mnemonicParsing="false" onAction="#doShowData" prefHeight="34.0" prefWidth="150.0" styleClass="btn-show" text="Show Data">
+                                                    <font>
+                                                        <Font size="15.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </GridPane>
+                            </children>
+                        </VBox>
+
+                        <VBox spacing="12.0" styleClass="table-card">
+                            <padding>
+                                <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
+                            </padding>
+                            <children>
+                                <Label styleClass="section-label" text="Matching Customers">
+                                    <font>
+                                        <Font name="System Bold" size="18.0" />
+                                    </font>
+                                </Label>
+                                <TableView fx:id="TableCustomers" prefHeight="450.0" prefWidth="928.0" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+
+                        <HBox alignment="CENTER" spacing="24.0" styleClass="action-bar">
+                            <children>
+                                <Button fx:id="btnExportExcel" mnemonicParsing="false" onAction="#doExportExcel" prefHeight="38.0" prefWidth="201.0" styleClass="btn-excel" text="Export To Excel">
+                                    <font>
+                                        <Font name="System Bold Italic" size="15.0" />
+                                    </font>
+                                </Button>
+                                <Button fx:id="btnGeneratePdf" mnemonicParsing="false" onAction="#doGeneratePdf" prefHeight="38.0" prefWidth="201.0" styleClass="btn-pdf" text="Generate PDF">
+                                    <font>
+                                        <Font name="System Bold" size="15.0" />
+                                    </font>
+                                </Button>
+                            </children>
+                        </HBox>
+
+                    </children>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </children>
+</AnchorPane>
