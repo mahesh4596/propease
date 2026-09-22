@@ -1,10 +1,7 @@
 CREATE DATABASE javaproject;
 USE javaproject;
 
-SHOW DATABASES;
-
 SHOW TABLES;
-DESCRIBE properties;
 
 CREATE TABLE customers (
     mobile VARCHAR(12) NOT NULL PRIMARY KEY,
