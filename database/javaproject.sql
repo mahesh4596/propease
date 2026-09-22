@@ -62,3 +62,11 @@ CREATE TABLE deals (
 	FOREIGN KEY (buyerMobile) REFERENCES customers(mobile)
 );
 SELECT * FROM deals;
+
+CREATE TABLE users(
+    userid INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(30) UNIQUE,
+    password VARCHAR(100)
+);
+INSERT INTO users(username,password) VALUES ('admin','12345');
+SELECT * FROM users;
